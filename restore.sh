@@ -21,7 +21,7 @@ if [ -d "$LATEST_BACKUP" ]; then
   #curl -fsS -m 10 --retry 5 -o /dev/null https://hc-ping.com/4684caec-fb1f-4dd8-be5f-51934460ea73
   
   # Slack WebHook in Tibimez#near channel
-  curl -X POST --data-urlencode "payload={\"channel\": \"#near\", \"username\": \"webhookbot\", \"text\": \"sotcsa-backup restored from backup\", \"icon_emoji\": \":ghost:\"}" $SLACK_WEBHOOK
+  curl -s -o /dev/null -X POST --data-urlencode "payload={\"channel\": \"#near\", \"username\": \"restore-bot\", \"text\": \"sotcsa-backup: restored from backup\", \"icon_emoji\": \":warning:\"}" $SLACK_WEBHOOK
   
   echo "Restore from backup completed" | ts
   
