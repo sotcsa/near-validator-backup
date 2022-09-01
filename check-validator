@@ -1,0 +1,1 @@
+sudo journalctl -n 1000 -u neard | grep "Validator" > /dev/null && echo "Validator" || echo "Backup"
